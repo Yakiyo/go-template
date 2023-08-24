@@ -21,6 +21,16 @@ var rootCmd = &cobra.Command{
 	PersistentPreRunE: func(cmd *cobra.Command, args []string) error {
 		config.BindFlags(cmd)
 
+		if cfg := utils.Must(cmd.Flags().GetString("config")); cfg != "" {
+			// when passed the `--config/-c` flag, set viper
+			// to explicitly read from that file, this will
+			// error if the config file does not exist
+			viper.SetConfigFile(cfg)
+		}
+
+		// read config
+		config.Read()
+
 		logger.SetLevel(viper.GetString("log_level"))
 		utils.SetColor(viper.GetString("color"))
 
