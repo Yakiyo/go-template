@@ -1,12 +1,13 @@
 package cmd
 
 import (
-	"fmt"
 	"os"
 
 	"github.com/Yakiyo/go-template/config"
 	logger "github.com/Yakiyo/go-template/log"
 	"github.com/Yakiyo/go-template/meta"
+	"github.com/Yakiyo/go-template/utils"
+	"github.com/charmbracelet/log"
 	cc "github.com/ivanpirog/coloredcobra"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
@@ -19,9 +20,11 @@ var rootCmd = &cobra.Command{
 	Version: meta.Version,
 	PersistentPreRunE: func(cmd *cobra.Command, args []string) error {
 		config.BindFlags(cmd)
+
 		logger.SetLevel(viper.GetString("log_level"))
-		fmt.Println("In pre-run")
-		fmt.Printf("%#v\n", viper.AllSettings())
+		utils.SetColor(viper.GetString("color"))
+
+		log.Debug(viper.AllSettings())
 		return nil
 	},
 }
