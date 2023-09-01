@@ -53,9 +53,10 @@ scoops:
 
 brews:
   - name: "{{ .ProjectName }}"
-    alternative_names:
-      - "{{ .ProjectName }}@{{ .Version }}"
-      - "{{ .ProjectName }}@{{ .Major }}"
+    # available in goreleaser pro
+    # alternative_names:
+    #   - "{{ .ProjectName }}@{{ .Version }}"
+    #   - "{{ .ProjectName }}@{{ .Major }}"
     commit_author:
       name: goreleaserbot
       email: bot@goreleaser.com
