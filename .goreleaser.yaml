@@ -44,7 +44,25 @@ scoops:
       email: bot@goreleaser.com
     commit_msg_template: "Update scoop manifest to {{ .ProjectName }} version {{ .Tag }}"
     homepage: "https://github.com/Yakiyo/go-template"
+    license: "MIT"
     description: "{{ .ProjectName }} version {{ .Tag }}"
+    repository:
+      owner: "Yakiyo"
+      name: "{{ .ProjectName }}"
+      branch: "{{ .Branch }}"
+
+brews:
+  - name: "{{ .ProjectName }}"
+    alternative_names:
+      - "{{ .ProjectName }}@{{ .Version }}"
+      - "{{ .ProjectName }}@{{ .Major }}"
+    commit_author:
+      name: goreleaserbot
+      email: bot@goreleaser.com
+    commit_msg_template: "Update brew formula to {{ .ProjectName }} version {{ .Tag }}"
+    folder: "share/brew"
+    homepage: "https://github.com/Yakiyo/go-template"
+    license: "MIT"
     repository:
       owner: "Yakiyo"
       name: "{{ .ProjectName }}"
