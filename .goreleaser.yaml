@@ -49,7 +49,7 @@ scoops:
     repository:
       owner: "Yakiyo"
       name: "{{ .ProjectName }}"
-      branch: "{{ .Branch }}"
+      branch: "main"
 
 brews:
   - name: "{{ .ProjectName }}"
@@ -67,4 +67,4 @@ brews:
     repository:
       owner: "Yakiyo"
       name: "{{ .ProjectName }}"
-      branch: "{{ .Branch }}"
+      branch: "main"
