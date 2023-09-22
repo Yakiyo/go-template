@@ -1,4 +1,6 @@
 # go-template
+[![ci](https://github.com/Yakiyo/go-template/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Yakiyo/go-template/actions/workflows/ci.yml) ![GitHub go.mod Go version (subdirectory of monorepo)](https://img.shields.io/github/go-mod/go-version/Yakiyo/go-template) ![GitHub tag (with filter)](https://img.shields.io/github/v/tag/Yakiyo/go-template?label=version)
+
 My own template repository for cli apps with Go
 
 Some of the code structure and ideas were taken from [metafates/go-template](https://github.com/metafates/go-template/).
